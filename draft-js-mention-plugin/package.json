@@ -1,5 +1,5 @@
 {
-  "name": "draft-js-mention-plugin",
+  "name": "@mathieumg/draft-js-mention-plugin",
   "version": "2.0.0-rc2",
   "description": "Mention Plugin for DraftJS",
   "author": {
