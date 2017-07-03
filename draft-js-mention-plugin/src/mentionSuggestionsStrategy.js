@@ -22,11 +22,9 @@ const findWithRegex = (regex, contentBlock, callback) => {
   );
 };
 
-export default (trigger: string, regExp: string, supportWhiteSpace: boolean, maxSuggestionsCharacters: number) => (contentBlock: Object, callback: Function) => {
-  // findWithRegex(new RegExp(`(\\s|^)${escapeRegExp(trigger)}${regExp}`, 'g'), contentBlock, callback);
-
+export default (trigger: string, regExp: string, supportWhiteSpace: boolean, maxSuggestionsCharacters: number) => {
   const MENTION_REGEX = supportWhiteSpace ?
-    new RegExp(`${escapeRegExp(trigger)}[\\w\\s]{0,${maxSuggestionsCharacters}}`, 'g') :
+    new RegExp(`(\\s|^)${escapeRegExp(trigger)}[\\w\\s-]{0,${maxSuggestionsCharacters}}`, 'g') :
     new RegExp(`(\\s|^)${escapeRegExp(trigger)}${regExp}`, 'g');
 
   return (contentBlock: Object, callback: Function) => {
