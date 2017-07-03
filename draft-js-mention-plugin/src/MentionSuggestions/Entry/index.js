@@ -38,7 +38,10 @@ export default class Entry extends Component {
     this.props.onMentionFocus(this.props.index);
   };
 
-  onTouchStart = () => {
+  onTouchStart = (event) => {
+    // Note: important to avoid a content edit change
+    event.preventDefault();
+
     this.props.onMentionSelect(this.props.mention);
   };
 
