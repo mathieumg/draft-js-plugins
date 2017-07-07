@@ -94,7 +94,6 @@ export default (config = {}) => {
     mentionTrigger = '@',
     mentionRegExp = defaultRegExp,
     supportWhitespace = false,
-    maxSuggestionsCharacters = 20,
   } = config;
   const mentionSearchProps = {
     ariaProps,
@@ -114,7 +113,7 @@ export default (config = {}) => {
         component: decorateComponentWithProps(Mention, { theme, mentionComponent }),
       },
       {
-        strategy: mentionSuggestionsStrategy(mentionTrigger, mentionRegExp, supportWhitespace, maxSuggestionsCharacters),
+        strategy: mentionSuggestionsStrategy(mentionTrigger, mentionRegExp, supportWhitespace),
         component: decorateComponentWithProps(MentionSuggestionsPortal, { store }),
       },
     ],
